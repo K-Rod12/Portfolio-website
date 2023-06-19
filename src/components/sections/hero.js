@@ -17,6 +17,47 @@ const StyledHeroSection = styled.section`
     padding-top: var(--nav-height);
   }
 
+  .typed-text {
+    border-right: 0.15em solid #333;
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 0.15em;
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+      blinkTextCursor 500ms steps(44) infinite normal;
+  }
+  .typed-text::after {
+    content: '';
+    display: inline-block;
+    width: 0px;
+    border-right: 0.15em solid #ffffff;
+    animation: typewriter-after 4s steps(44) 1s 1 normal both,
+      blinkTextCursor-after 500ms steps(44) infinite normal;
+  }
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 95%;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: #ffffff;
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  @keyframes typewriter-after {
+    from {
+      width: 0;
+    }
+    to {
+      width: 0.15em;
+    }
+  }
+
   h1 {
     margin: 0 0 30px 4px;
     color: var(--orange);
@@ -59,7 +100,7 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is </h1>;
+  const one = <h1 className="typed-text">Hi, my name is </h1>;
   const two = <h2 className="big-heading">Kenley Rodriguez.</h2>;
   const three = <h3 className="big-heading">I build things for the web.</h3>;
   const four = (
