@@ -1,6 +1,3 @@
-<div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/bchiang7/v4/main/src/images/logo.png" width="100" />
-</div>
 <h1 align="center">
   kenleyrodriguez.com
 </h1>
@@ -8,7 +5,7 @@
   The first iteration of <a href="https://kenleyrodriguez.com" target="_blank">kenleyrodriguez.com</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://firebase.google.com/" target="_blank">Firebase</a>
 </p>
 
-![demo](https://raw.githubusercontent.com/bchiang7/v4/main/src/images/demo.png)
+![demo](https://raw.githubusercontent.com/k-rod12/portfolio-website/main/src/images/demo.png)
 
 ## 🛠 Installation & Set Up
 
@@ -61,4 +58,4 @@
 | Light Slate    | ![#a8b2d1](https://via.placeholder.com/10/a8b2d1?text=+) `#a8b2d1` |
 | Lightest Slate | ![#ccd6f6](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` |
 | White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
-| Green          | ![#64ffda](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` |
+| Orange          | ![#EA9A0D](https://via.placeholder.com/10/EA9A0D?text=+) `#EA9A0D` |
