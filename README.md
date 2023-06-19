@@ -8,7 +8,7 @@
   The first iteration of <a href="https://kenleyrodriguez.com" target="_blank">kenleyrodriguez.com</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://firebase.google.com/" target="_blank">Firebase</a>
 </p>
 
-![demo](https://raw.githubusercontent.com/bchiang7/v4/main/src/images/demo.png)
+![demo](https://raw.githubusercontent.com/k-rod12/portfolio-website/main/src/images/demo.png)
 
 ## 🛠 Installation & Set Up
 
