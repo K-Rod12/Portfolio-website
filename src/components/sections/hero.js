@@ -115,6 +115,7 @@ const Hero = () => {
       </p>
     </>
   );
+  // const five  = <img src='../../images/Headshot.jpg' alt='Memoji'></img>
 
   const items = [one, two, three, four];
 
