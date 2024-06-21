@@ -4,10 +4,10 @@ module.exports = {
   siteMetadata: {
     title: 'Kenley Rodriguez',
     description:
-      'Brittany Chiang is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
+      'Kenley Rodriguez is a software engineer who specializes in building exceptional digital experiences.',
     siteUrl: 'https://Kenleyrodriguez.com', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+    image: '/og.jpeg', // Path to your image you placed in the 'static' folder
+    twitterUsername: '@kenfunky32_',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
+import MemojiImage from '../../images/Memoji.png';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -102,7 +103,7 @@ const Hero = () => {
 
   const one = <h1 className="typed-text">Hi, my name is </h1>;
   const two = <h2 className="big-heading">Kenley Rodriguez.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const three = <h3 className="big-heading">I like to build things!</h3>;
   const four = (
     <>
       <p>
@@ -115,9 +116,16 @@ const Hero = () => {
       </p>
     </>
   );
-  // const five  = <img src='../../images/Headshot.jpg' alt='Memoji'></img>
+  const five = (
+    <div
+      style={{
+        marginBottom: '50px',
+      }}>
+      <img src={MemojiImage} alt="Memoji"></img>
+    </div>
+  );
 
-  const items = [one, two, three, four];
+  const items = [five, one, two, three, four];
 
   return (
     <StyledHeroSection>
