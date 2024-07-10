@@ -135,7 +135,7 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Kenley Rodriguez and my passion is all things tech. From programming
+              My name is Kenley Rodriguez and my passion is all things tech. From programming
               languages to web development frameworks, I enjoy exploring the latest tools and
               techniques to create innovative solutions that can make a real difference in people's
               lives. My interest in computer science began in my sophomore year of high school, when

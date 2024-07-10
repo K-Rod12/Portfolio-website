@@ -150,9 +150,21 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-45666519-2',
+        trackingIds: [
+          'G-76XCD1PMFR', // This is your Google Analytics Measurement ID
+        ],
+        gtagConfig: {
+          optimize_id: 'OPT_CONTAINER_ID', // Optional, only if you use Google Optimize
+          anonymize_ip: true, // Anonymize IP for GDPR compliance
+          cookie_expires: 0, // Set the cookie expiration time (in seconds)
+        },
+        pluginConfig: {
+          head: true, // Puts tracking script in the head instead of the body
+          respectDNT: true, // Respects users' "Do Not Track" browser settings
+          exclude: ['/preview/**', '/do-not-track/me/too/'], // Avoids sending pageview hits from custom paths
+        },
       },
     },
   ],
