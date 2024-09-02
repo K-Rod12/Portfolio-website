@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '3'
 title: 'MeChef Mobile'
 cover: './demo.png'
 github: 'https://github.com/K-Rod12/MeChefMobile'

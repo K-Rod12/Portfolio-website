@@ -1,9 +1,9 @@
 ---
 date: '2022-09-21'
-title: 'Software Engineer'
+title: 'Fullstack PSoftware Engineer'
 company: 'Discover'
 location: 'Remote'
-range: 'Aug 2022 - Present'
+range: 'Aug 2022 - July 2024'
 url: 'https://www.discover.com/company/our-company/'
 ---
 

@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '2'
 title: 'MiSu V3'
 cover: './demo.png'
 github: 'https://github.com/STIR-Lab/MiSu-v3'

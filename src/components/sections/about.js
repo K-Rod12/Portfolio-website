@@ -145,13 +145,23 @@ const About = () => {
             </p>
 
             <p>
-              Fast-forward to today, and I have the privilege of working at{' '}
+              Since then, I've had the opportunity to apply my skills in professional settings,
+              including a rewarding tenure at{' '}
               <a href="https://www.discover.com/company/our-company/">
                 Discover Financial Services
               </a>{' '}
-              as a backend engineer. My main focus and responsiblity is in database management and
-              API development, using my skills to ensure that data is stored and accessed
-              efficiently and securely.
+              as a backend engineer. My experience there focused on database management and API
+              development, where I honed my abilities in ensuring efficient and secure data storage
+              and access.
+            </p>
+
+            <p>
+              Currently, I'm excited to be exploring new opportunities in the tech industry. I'm
+              eager to leverage my expertise in backend development, along with my passion for
+              learning and adapting to new technologies, to contribute to innovative projects and
+              teams. As I continue to grow in my career, I'm looking forward to tackling new
+              challenges and making meaningful contributions in the ever-evolving world of
+              technology.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>

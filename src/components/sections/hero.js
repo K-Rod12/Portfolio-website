@@ -7,15 +7,14 @@ import { usePrefersReducedMotion } from '@hooks';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   min-height: 100vh;
   height: 100vh;
-  padding: 0;
 
-  @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
-    height: auto;
-    padding-top: var(--nav-height);
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    padding: 0 50px;
   }
 
   .typed-text {
@@ -39,7 +38,7 @@ const StyledHeroSection = styled.section`
       width: 0;
     }
     to {
-      width: 95%;
+      width: 27%;
     }
   }
   @keyframes blinkTextCursor {
@@ -108,11 +107,8 @@ const Hero = () => {
     <>
       <p>
         I am a full-stack Software Engineer with a passion for building scalable and user-friendly
-        web applications. I am currently working as a backend developer at{' '}
-        <a style={{ color: 'orange' }} href="https://www.discover.com/company/our-company/">
-          Discover Financial Services
-        </a>
-        .
+        web applications. I am currently job searching for a full-time role as a Junior/Mid level
+        Software Engineer.
       </p>
     </>
   );
@@ -125,28 +121,67 @@ const Hero = () => {
     </div>
   );
 
-  const items = [five, one, two, three, four];
+  const textItems = [one, two, three, four];
 
   return (
     <StyledHeroSection>
-      {prefersReducedMotion ? (
-        <>
-          {items.map((item, i) => (
-            <div key={i}>{item}</div>
-          ))}
-        </>
-      ) : (
-        <TransitionGroup component={null}>
-          {isMounted &&
-            items.map((item, i) => (
-              <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
-                <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
-              </CSSTransition>
+      <TextSection>
+        {prefersReducedMotion ? (
+          <>
+            {textItems.map((item, i) => (
+              <div key={i}>{item}</div>
             ))}
-        </TransitionGroup>
-      )}
+          </>
+        ) : (
+          <TransitionGroup component={null}>
+            {isMounted &&
+              textItems.map((item, i) => (
+                <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
+                  <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
+                </CSSTransition>
+              ))}
+          </TransitionGroup>
+        )}
+      </TextSection>
+      <ImageSection>
+        {isMounted && (
+          <CSSTransition classNames="fadeup" timeout={loaderDelay}>
+            <div style={{ transitionDelay: `1000ms` }}>{five}</div>
+          </CSSTransition>
+        )}
+      </ImageSection>{' '}
     </StyledHeroSection>
   );
 };
 
 export default Hero;
+const TextSection = styled.div`
+  flex: 4;
+  max-width: 100%;
+`;
+
+const ImageSection = styled.div`
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  img {
+    max-width: 400px;
+    height: auto;
+  }
+
+  @media (max-width: 1200px) {
+    img {
+      max-width: 350px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+
+    img {
+      max-width: 300px;
+    }
+  }
+`;
