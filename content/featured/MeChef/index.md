@@ -1,7 +1,8 @@
 ---
 date: '3'
 title: 'MeChef Mobile'
-cover: './demo.png'
+cover:
+  - './demo.png'
 github: 'https://github.com/K-Rod12/MeChefMobile'
 tech:
   - React Native

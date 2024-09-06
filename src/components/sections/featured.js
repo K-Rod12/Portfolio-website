@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import SwipeableViews from 'react-swipeable-views';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
@@ -9,7 +10,6 @@ import { usePrefersReducedMotion } from '@hooks';
 
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
-
   a {
     position: relative;
     z-index: 1;
@@ -303,6 +303,19 @@ const StyledProject = styled.li`
   }
 `;
 
+const ArrowButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: var(--orange);
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  &:hover {
+    background-color: var(--light-slate);
+  }
+`;
+
 const Featured = () => {
   const data = useStaticQuery(graphql`
     {
@@ -334,6 +347,7 @@ const Featured = () => {
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [indices, setIndices] = useState(Array(featuredProjects.length).fill(0));
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -343,6 +357,24 @@ const Featured = () => {
     sr.reveal(revealTitle.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
+
+  const handleNext = i => {
+    setIndices(prevIndices => {
+      const newIndices = [...prevIndices];
+      newIndices[i] = (newIndices[i] + 1) % featuredProjects[i].node.frontmatter.cover.length;
+      return newIndices;
+    });
+  };
+
+  const handlePrev = i => {
+    setIndices(prevIndices => {
+      const newIndices = [...prevIndices];
+      newIndices[i] =
+        (newIndices[i] - 1 + featuredProjects[i].node.frontmatter.cover.length) %
+        featuredProjects[i].node.frontmatter.cover.length;
+      return newIndices;
+    });
+  };
 
   return (
     <section id="projects">
@@ -355,7 +387,7 @@ const Featured = () => {
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
             const { external, title, tech, github, cover, cta } = frontmatter;
-            const image = getImage(cover);
+            const images = cover?.map(img => getImage(img));
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -401,9 +433,37 @@ const Featured = () => {
                 </div>
 
                 <div className="project-image">
-                  <a href={external ? external : github ? github : '#'}>
-                    <GatsbyImage image={image} alt={title} className="img" />
-                  </a>
+                  <SwipeableViews
+                    index={indices[i]}
+                    onChangeIndex={index =>
+                      setIndices(prevIndices => {
+                        const newIndices = [...prevIndices];
+                        newIndices[i] = index;
+                        return newIndices;
+                      })
+                    }
+                    enableMouseEvents>
+                    {images?.map((image, j) => (
+                      <a key={j} href={external ? external : github ? github : '#'}>
+                        <GatsbyImage image={image} alt={title} className="img" />
+                      </a>
+                    ))}
+                  </SwipeableViews>
+
+                  {images && images.length > 1 && (
+                    <div>
+                      <ArrowButton
+                        onClick={() => handlePrev(i)}
+                        style={{ left: '40%', bottom: '0px' }}>
+                        &#9664;
+                      </ArrowButton>
+                      <ArrowButton
+                        onClick={() => handleNext(i)}
+                        style={{ right: '40%', bottom: '0px' }}>
+                        &#9654;
+                      </ArrowButton>
+                    </div>
+                  )}
                 </div>
               </StyledProject>
             );

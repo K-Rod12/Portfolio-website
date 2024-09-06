@@ -1,7 +1,10 @@
 ---
 date: '2'
 title: 'MiSu V3'
-cover: './demo.png'
+cover:
+  - './demo.png'
+  - './demo-2.png'
+  - './demo-3.png'
 github: 'https://github.com/STIR-Lab/MiSu-v3'
 tech:
   - React Native

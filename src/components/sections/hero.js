@@ -41,6 +41,18 @@ const StyledHeroSection = styled.section`
       width: 27%;
     }
   }
+
+  @media (max-width: 768px) {
+    @keyframes typewriter {
+      from {
+        width: 0;
+      }
+      to {
+        width: 75%; /* Adjust this percentage as needed for smaller screens */
+      }
+    }
+  }
+
   @keyframes blinkTextCursor {
     from {
       border-right-color: #ffffff;
@@ -179,6 +191,7 @@ const ImageSection = styled.div`
 
   @media (max-width: 768px) {
     justify-content: center;
+    margin-top: 80px;
 
     img {
       max-width: 300px;
