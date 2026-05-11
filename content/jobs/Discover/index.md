@@ -1,6 +1,6 @@
 ---
 date: '2022-09-21'
-title: 'Fullstack PSoftware Engineer'
+title: 'Fullstack Software Engineer'
 company: 'Discover'
 location: 'Remote'
 range: 'Aug 2022 - July 2024'
