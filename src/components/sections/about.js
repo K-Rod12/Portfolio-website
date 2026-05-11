@@ -125,7 +125,16 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Node.js', 'SQL', 'RDBMS'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'TypeScript',
+    'React',
+    'Node.js',
+    'Java',
+    'Spring Boot',
+    'SQL',
+    'RDBMS',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -150,21 +159,19 @@ const About = () => {
               <a href="https://www.discover.com/company/our-company/">
                 Discover Financial Services
               </a>{' '}
-              as a backend engineer. My experience there focused on database management and API
-              development, where I honed my abilities in ensuring efficient and secure data storage
-              and access.
+              as a full stack engineer, where I focused on database management, API development, and
+              cloud infrastructure.
             </p>
 
             <p>
-              Currently, I'm excited to be exploring new opportunities in the tech industry. I'm
-              eager to leverage my expertise in backend development, along with my passion for
-              learning and adapting to new technologies, to contribute to innovative projects and
-              teams. As I continue to grow in my career, I'm looking forward to tackling new
-              challenges and making meaningful contributions in the ever-evolving world of
-              technology.
+              Currently, I'm based in Fort Lauderdale, FL and working at{' '}
+              <a href="https://www.ukg.com/">UKG</a> as a Full Stack Software Engineer, where I
+              build and maintain critical Java Spring Boot services for the Time &amp; Attendance
+              platform. My work spans distributed systems, API integrations, and platform
+              modernization at scale.
             </p>
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here are a few technologies I've been working with recently:</p>
           </div>
 
           <ul className="skills-list">
