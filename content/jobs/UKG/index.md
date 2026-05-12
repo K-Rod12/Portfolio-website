@@ -12,3 +12,4 @@ url: 'https://www.ukg.com/'
 - Designed and implemented monitoring solutions for distributed services, ensuring high availability and quick problem resolution in production environments
 - Owned the API integration layer, including a Java mobile gateway used by the UKG mobile app to securely connect to customer UTA environments, collaborating with stakeholders to refine API specifications
 - Owned and resolved customer-blocking production incidents across distributed Java services, applying deep system design knowledge and algorithmic problem-solving for quick resolution
+- Introduced AI-assisted development practices within the team, using tools like Claude to streamline engineering workflows and reduce time-to-resolution on complex problems
